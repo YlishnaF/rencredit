@@ -16,8 +16,9 @@
         <selenium.version>3.141.59</selenium.version>
         <junit.version>5.8.2</junit.version>
         <junit-platform-launcher.version>1.8.2</junit-platform-launcher.version>
+        <junit-jupiter-engine.version>5.8.2</junit-jupiter-engine.version>
         <surefire.version>3.0.0-M5</surefire.version>
-        <compiler.version>3.9.0</compiler.version>
+        <compiler.version>3.8.1</compiler.version>
         <aspectj.version>1.9.7</aspectj.version>
         <allure-junit5.version>2.13.6</allure-junit5.version>
         <allure-maven.version>2.10.0</allure-maven.version>
@@ -36,7 +37,7 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${junit.version}</version>
-            <!--            <scope>test</scope>-->
+            <!--<scope>test</scope>-->
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
 
@@ -56,7 +57,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.2</version>
+            <version>${junit-jupiter-engine.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -78,7 +79,7 @@
                         <property>
                             <name>listener</name>
                             <value>framework.utils.MyAllureListener</value>
-                            <!--                            <value>io.qameta.allure.junit5.AllureJunit5</value>-->
+                            <!--<value>io.qameta.allure.junit5.AllureJunit5</value>-->
                         </property>
                     </properties>
                     <systemPropertyVariables>
@@ -94,11 +95,10 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>${compiler.version}</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
@@ -127,5 +127,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

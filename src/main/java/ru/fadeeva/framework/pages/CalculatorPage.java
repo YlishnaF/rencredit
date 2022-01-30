@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ru.fadeeva.framework.data.VariablesForSearch;
 
 import java.util.List;
 
@@ -61,12 +62,12 @@ public class CalculatorPage extends BasePage {
     @Step(value = "Заполняем {line} значением {value}")
     public CalculatorPage fillData(String line, String value) {
         switch (line) {
-            case ("Сумма вклада"):
+            case (VariablesForSearch.SUM_CONTRIBUTION):
                 scrollToElement(calculatorBlock);
                 amountOfMoney.click();
                 amountOfMoney.sendKeys(value);
                 break;
-            case ("На срок"):
+            case (VariablesForSearch.DURATION_LINE):
                 scrollToElement(amountOfMoney);
                 int i = 0;
                 try{
@@ -78,7 +79,7 @@ public class CalculatorPage extends BasePage {
                     }
                 }
                 break;
-            case ("Ежемесячное пополнение"):
+            case (VariablesForSearch.MONTHLY_ADD_MONEY_LINE):
                 scrollToElement(duration);
                 waitElementToBeClicable(addMoneyMonthly);
                 addMoneyMonthly.click();
