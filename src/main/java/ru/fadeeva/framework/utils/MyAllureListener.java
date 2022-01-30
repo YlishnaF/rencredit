@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.AfterTestExecutionCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import ru.fadeeva.framework.managers.DriverManager;
 
 public class MyAllureListener extends AllureJunit5 implements AfterTestExecutionCallback {
 

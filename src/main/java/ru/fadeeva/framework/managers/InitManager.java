@@ -3,7 +3,9 @@ package ru.fadeeva.framework.managers;
 
 import java.util.concurrent.TimeUnit;
 
-import static ru.fadeeva.framework.utils.PropsConst.*;
+import static ru.fadeeva.framework.utils.PropsConst.IMPLICITLY_WAIT;
+import static ru.fadeeva.framework.utils.PropsConst.PAGE_LOAD_TIMEOUT;
+
 
 public class InitManager {
     private static final TestPropManager props = TestPropManager.getInstance();

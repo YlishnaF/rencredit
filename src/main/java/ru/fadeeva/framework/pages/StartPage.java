@@ -19,7 +19,7 @@ public class StartPage extends BasePage{
     @FindBy(xpath = "//h2[contains(text(),\"Рассчитайте доходность\")]")
     private WebElement titleCalculator;
 
-    @Step(value = "В верзнем меню выбираем {s}")
+    @Step(value = "В верхнем меню выбираем {s}")
     public StartPage clickTopMenu(String s){
         for (WebElement menu: topMenu) {
             if(menu.getText().contains(s)){

@@ -1,8 +1,8 @@
 package ru.fadeeva.framework.managers;
 
-import ru.fadeeva.framework.utils.PropsConst;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import ru.fadeeva.framework.utils.PropsConst;
 
 public class DriverManager {
     private static DriverManager INSTANCE;
