@@ -8,12 +8,10 @@ import java.util.Properties;
 public class TestPropManager {
     private static TestPropManager INSTANCE=null;
 
-    //Тут храняться все переменные properties
     private final Properties properties =new Properties();
 
     private TestPropManager(){
         loadApplicationProperties();
-        //проверяет, передал ли что-то пользователь, например  mvn clean test -Dtype.browser=fireFox  - application изменит тип браузера
         loadCustomProperties();
 
     }
@@ -25,9 +23,6 @@ public class TestPropManager {
         return INSTANCE;
     }
     private void loadApplicationProperties(){
-
-        //ищет propFile, которого нет и берет в таком случае application
-        // можно создать так mvn clean test -DpropFile = application (или любой другой)
         String nameFile = System.getProperty("propFile", "application");
 
         try{
