@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 import ru.fadeeva.framework.data.VariablesForSearch;
 
 import java.util.List;
@@ -20,7 +21,9 @@ public class CalculatorPage extends BasePage {
     @FindBy(xpath = "//input[@name=\"amount\"]")
     private WebElement amountOfMoney;
 
-    @FindBy(xpath = "//div[@class=\"jq-selectbox__select-text\"]")
+ //
+ //   @FindBy(xpath = "//div[@class=\"jq-selectbox__select-text\"]")
+    @FindBy(xpath = "//select")
     private WebElement duration;
 
     @FindBy(xpath = "//li[@style]")
@@ -69,15 +72,17 @@ public class CalculatorPage extends BasePage {
                 break;
             case (VariablesForSearch.DURATION_LINE):
                 scrollToElement(amountOfMoney);
-                int i = 0;
-                try{
-                    setDuration(value);
-                } catch (StaleElementReferenceException e){
-                    while (i<2){
-                        i++;
-                        fillData(line,value);
-                    }
-                }
+                Select select = new Select(duration);
+                select.selectByVisibleText(value);
+//                int i = 0;
+//                try{
+//                    setDuration(value);
+//                } catch (StaleElementReferenceException e){
+//                    while (i<2){
+//                        i++;
+//                        fillData(line,value);
+//                    }
+//                }
                 break;
             case (VariablesForSearch.MONTHLY_ADD_MONEY_LINE):
                 scrollToElement(duration);

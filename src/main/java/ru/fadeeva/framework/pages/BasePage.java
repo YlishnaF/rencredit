@@ -28,6 +28,7 @@ public class BasePage {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
+
     protected void waitText(WebElement webElement, String text){
         wait.until(ExpectedConditions.textToBePresentInElement(webElement,text));
     }
@@ -40,4 +41,5 @@ public class BasePage {
     protected void changeTextElement(WebElement webElement){
         ((JavascriptExecutor) driverManager.getDriver()).executeScript("document.querySelector('div.jq-selectbox__select-text').textContent = \"9 месяцев\"");
     }
+
 }

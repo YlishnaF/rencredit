@@ -15,7 +15,5 @@ public class USDRenCreditTest extends BaseClass {
                 .fillData(VariablesForSearch.MONTHLY_ADD_MONEY_LINE, VariablesForSearch.MONTHLY_ADD_MONEY_NUMBER_USD)
                 .clickCapitalizationMonthly()
                 .checkCalculationResult();
-
-
     }
 }

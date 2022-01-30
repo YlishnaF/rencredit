@@ -1,5 +1,6 @@
 package ru.fadeeva.framework.base;
 
+import org.junit.jupiter.api.AfterEach;
 import ru.fadeeva.framework.managers.DriverManager;
 import ru.fadeeva.framework.managers.InitManager;
 import ru.fadeeva.framework.managers.PageManager;
@@ -20,15 +21,20 @@ public class BaseClass {
     @BeforeAll
     public static void beforeClass(){
         InitManager.initFramework();
+        System.out.println("BeforeAll");
     }
 
     @BeforeEach
     void before() {
         driverManager.getDriver().get(propManager.getProperty(PropsConst.BASE_URL));
     }
+    @AfterEach
+    void after(){
+    }
 
     @AfterAll
     public static void afterAll() {
+        System.out.println("after all");
         InitManager.quitFramework();
     }
 

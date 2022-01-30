@@ -15,8 +15,6 @@ public class RubRenCreditTest extends BaseClass {
                 .fillData(VariablesForSearch.MONTHLY_ADD_MONEY_LINE, VariablesForSearch.MONTHLY_ADD_MONEY_NUMBER_RUB)
                 .clickCapitalizationMonthly()
                 .checkCalculationResult();
-
-
     }
 }
 
